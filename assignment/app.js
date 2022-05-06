@@ -204,8 +204,9 @@ const createElement = (elementType = "div", properties, ...children) => {
 
 const createComment = (name, text, settings) => {
   text = text.replaceAll("\n", "<br>");
-  const p1 = createElement("span", { textContent: name + ' : ', className: "text-bold name"  });
-  const p2 = createElement("span", { innerHTML: text, className: "comment-text" });
+  const p1 = createElement("span", { textContent: name  , className: "text-bold name"  });
+  const p2 = createElement("span", { innerHTML: text , className: "comment-text"  });
+  const p3=createElement("span",{textContent:" : "})
   p1.contentEditable=true
   p2.contentEditable=true
   
@@ -216,16 +217,9 @@ const createComment = (name, text, settings) => {
   buttons.push(createElement("button", { textContent: "-", className: "btn btn-primary small delete" }));
   
   const btnHolder = createElement("div", { className: "btn-holder" }, ...buttons);
-
   const expandbtn=createElement("button",{id:"btn", textContent:" ", className:"accordion-button "})
-
-
-
-  
-  
-  const mainComment = createElement("p", { className: "main-comment caret  " }, p1, p2, expandbtn,  btnHolder);
+  const mainComment = createElement("div", { className: "main-comment caret  " }, p1,p3, p2, expandbtn,  btnHolder);
   const subComments = createElement("div", { className: "sub-comments nested" });
-
 
   return createElement("div", { className: "comment" }, mainComment, subComments);
  
@@ -238,15 +232,24 @@ const createComment = (name, text, settings) => {
 
 const createCommentInput = () => {
   const propertyInput = createElement("input", { placeholder: "Property", className: "text-bold name " });
-  const costInput = createElement("input", { placeholder: "Cost", className: "text-bold name " });
+  const costInput = createElement("input", { placeholder: "Cost", className: "text-bold name ",id:"cost" });
  
   const postBtn = createElement("button", { textContent: "Add", className: "btn btn-primary small post " });
   const cancelBtn = createElement("button", { textContent: "Cancel", className: "btn btn-primary small cancel" });
   const btnHolder = createElement("div", { className: "btn-holder" }, postBtn, cancelBtn);
 
+  const plusbtn=createElement("button",{textContent:"+",className:"plus"})
+  const minusbtn=createElement("button",{textContent:"-"})
+
   return createElement("div", { className: "comment" },propertyInput,costInput, btnHolder);
   
 };
+
+
+
+
+
+
 
 const toggleNeighbours = (target) => {
   target.nextElementSibling.disabled = !target.nextElementSibling.disabled;
@@ -266,7 +269,14 @@ commentContainer.addEventListener("click", (e) => {
       return;
     }
 
-    
+
+
+    if(target.classList.contains("plus")){
+     
+      const cost=document.getElementById('cost')
+      cost.style.display="none"
+      return createElement("div", { className: "comment" }, mainComment, subComments);
+    }
    
     if (target.classList.contains("delete")) {
       target.closest(".comment").remove();

@@ -5,13 +5,18 @@ p{
   }
   
   .main-comment {
-    padding: 5px;
+    padding: 0px;
+    margin: 0px;
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px ;
     width: 190px;
+  
+ 
 
   }
-  
+  .main-comment caret{
+    margin-top: 0px;
+  }
   .comment-text[contenteditable="true"] {
     outline: 1px solid #ccc;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -19,6 +24,8 @@ p{
   
   .sub-comments {
     margin-left: 2rem;
+    
+    
   }
   
   button {
@@ -26,16 +33,28 @@ p{
     margin-top: 1rem;
     margin-left: 1rem;
     border: 0;
+    background-color: white;
    
   }
-  
+ 
+  .delete,.reply{
+    font-size: 31px;
+    margin: 0px;
+  }
+  .post,.cancel{
+    font-size: 19px;
+    margin-top: 1.5px;
+  }
+ 
   input {
     display: inline;
     /* margin: 0.5rem 0; */
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 0px;
   }
-
+.comment{
+  margin-top: 0px;
+}
  
 
   .accordion-button .caret {
