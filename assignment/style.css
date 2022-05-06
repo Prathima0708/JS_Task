@@ -1,0 +1,83 @@
+/* @import url(../../core.css); */
+
+p{
+    margin: 0.25rem 0;
+  }
+  
+  .main-comment {
+    padding: 5px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 190px;
+
+  }
+  
+  .comment-text[contenteditable="true"] {
+    outline: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sub-comments {
+    margin-left: 2rem;
+  }
+  
+  button {
+    /* margin: 0 10px; */
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border: 0;
+   
+  }
+  
+  input {
+    display: inline;
+    /* margin: 0.5rem 0; */
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+ 
+
+  .accordion-button .caret {
+    cursor: pointer;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+  
+  }
+  
+  .accordion-button::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  
+  .caret-down ::before {
+    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);  
+  }
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+ 
+  
+  /* .accordion-button{
+    background-color: red;
+    content: '&triangledown';
+  } */
+
+  /* textarea {
+    resize: none;
+  } */
+  
+  /* #commentContainer > .comment:first-child > .main-comment:first-child{
+    background-color: azure;
+  } */
